@@ -25,7 +25,6 @@ android {
         targetSdkVersion 26
         versionCode 100000
         versionName "10.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         debug {
@@ -36,12 +35,10 @@ android {
     productFlavors {
         aosp {
             applicationId 'com.android.launcher3.malin'
-            testApplicationId 'com.android.launcher3.tests'
         }
 
         l3go {
             applicationId 'com.android.launcher3.malin'
-            testApplicationId 'com.android.launcher3.tests'
         }
     }
     sourceSets {
@@ -55,19 +52,9 @@ android {
             }
         }
 
-        androidTest {
-            res.srcDirs = ['tests/res']
-            java.srcDirs = ['tests/src']
-            manifest.srcFile "tests/AndroidManifest-common.xml"
-        }
-
         aosp {
             java.srcDirs = ['src_flags']
             manifest.srcFile "AndroidManifest.xml"
-        }
-
-        aospAndroidTest {
-            manifest.srcFile "tests/AndroidManifest.xml"
         }
 
         l3go {
@@ -76,10 +63,6 @@ android {
             // Note: we are using the Launcher3 manifest here because the gradle manifest-merger uses
             // different attributes than the build system.
             manifest.srcFile "AndroidManifest.xml"
-        }
-
-        l3goAndroidTest {
-            manifest.srcFile "tests/AndroidManifest.xml"
         }
     }
 }
