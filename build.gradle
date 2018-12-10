@@ -93,19 +93,20 @@ repositories {
         }
 }
 
-final String SUPPORT_LIBS_VERSION = '27.0.0'
+final String SUPPORT_LIBS_VERSION = '27.1.1'
 dependencies {
     compile "com.android.support:support-v4:${SUPPORT_LIBS_VERSION}"
     compile "com.android.support:support-dynamic-animation:${SUPPORT_LIBS_VERSION}"
     compile "com.android.support:recyclerview-v7:${SUPPORT_LIBS_VERSION}"
     compile "com.android.support:palette-v7:${SUPPORT_LIBS_VERSION}"
-    compile 'com.google.protobuf.nano:protobuf-javanano:3.0.0-alpha-7'
+    compile 'com.google.protobuf.nano:protobuf-javanano:3.1.0'
+
 }
 
 protobuf {
     // Configure the protoc executable
     protoc {
-        artifact = 'com.google.protobuf:protoc:3.0.0-alpha-3'
+        artifact = 'com.google.protobuf:protoc:3.5.1'
 
         generateProtoTasks {
             all().each { task ->
